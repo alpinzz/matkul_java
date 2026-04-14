@@ -23,12 +23,12 @@ public class SistemInformasiPerpustakaan {
         System.out.println("Data berhasil disimpan!");
         System.out.println("=================");
 
-        for (int i = 0; i < data.size(); i++) {
+        for (int i = 0; i < data.size(); i += 5) {
             System.out.println("Judul Buku: " + data.get(i));
-            System.out.println("Penerbit: " + data.get(i));
-            System.out.println("Tanggal Terbit: " + data.get(i));
-            System.out.println("Alamat Terbit: " + data.get(i));
-            System.out.println("No ISSBN: " + data.get(i));
+            System.out.println("Penerbit: " + data.get(i + 1));
+            System.out.println("Tanggal Terbit: " + data.get(i + 2));
+            System.out.println("Alamat Terbit: " + data.get(i + 3));
+            System.out.println("No ISSBN: " + data.get(i + 4));
         }
         input.close();
     }
