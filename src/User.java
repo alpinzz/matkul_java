@@ -8,7 +8,7 @@ public class User {
 
     void register() {
         System.out.println("Register");
-        System.out.println("Silahakan registrasi");
+        System.out.println("Silahkan registrasi");
 
         Scanner input = new Scanner(System.in);
 
@@ -28,8 +28,6 @@ public class User {
         role = input.nextLine();
         dataUSer.add(role);
 
-        // System.out.println(dataUSer);
-
     }
 
     void login() {
@@ -48,11 +46,7 @@ public class User {
             System.out.println("Password: " + dataUSer.get(2));
             System.out.println("Role: " + dataUSer.get(3));
 
-            if (role.equalsIgnoreCase("admin")) {
-                System.out.println("Selamat datang " + dataUSer.get(3));
-            } else {
-                System.out.println("Selamat datang " + dataUSer.get(3));
-            }
+            System.out.println("Selamat Datang " + dataUSer.get(3));
         }
 
         input.close();
