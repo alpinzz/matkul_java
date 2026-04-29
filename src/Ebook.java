@@ -3,38 +3,39 @@ import java.util.Scanner;
 public class Ebook {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Sistem Informasi Ebook");
-        System.out.println("Tambah Ebook");
-        System.out.println("=====================");
 
-        System.out.print("Masukkan id ebook: ");
+        System.out.println("SISTEM INFORMASI EBOOK");
+        System.out.println("=======================");
+
+        System.out.print("Masukkan ID: ");
         int id = input.nextInt();
         input.nextLine();
 
-        System.out.print("Masukkan judul ebook: ");
+        System.out.print("Masukkan judul: ");
         String judul = input.nextLine();
 
-        System.out.print("Masukkan penerbit ebook: ");
-        String penerbit = input.nextLine();
+        System.out.print("Masukkan penulis: ");
+        String penulis = input.nextLine();
 
-        System.out.print("Masukkan tahun terbit ebook: ");
+        System.out.print("Masukkan tahun terbit: ");
         int tahunTerbit = input.nextInt();
         input.nextLine();
 
-        System.out.print("Masukkan penulis ebook: ");
-        String penulis = input.nextLine();
+        System.out.print("Masukkan penerbit: ");
+        String penerbit = input.nextLine();
 
-        for (Object buku : InformasiEbook.tambahData(id, judul, judul, tahunTerbit, penulis)) {
-            System.out.println(buku);
-        }
+        System.out.println(InformasiEbook.tambahData(id, judul, penulis, tahunTerbit, penerbit));
 
-        System.out.println("===========");
         System.out.println("Cari Data");
-        System.out.print("Masukkan penulis: ");
-        String penulisEbook = input.nextLine();
-        System.out.print("Masukkan judul: ");
-        String judulBuku = input.nextLine();
-        System.out.println(InformasiEbook.cariData(judul, penulis));
 
+        System.out.print("Masukkan judul ebook: ");
+        String cariJudul = input.nextLine();
+
+        System.out.print("Masukkan penulis ebook: ");
+        String cariPenulis = input.nextLine();
+
+        InformasiEbook.cariData(cariJudul, cariPenulis);
+
+        input.close();
     }
 }
