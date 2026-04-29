@@ -1,40 +1,30 @@
 import java.util.ArrayList;
 
 public class InformasiEbook {
+    static ArrayList<ArrayList<Object>> dataEbook = new ArrayList<>();
 
-    static ArrayList<Object> dataBuku = new ArrayList<Object>();
-    static int id, tahunTerbit;
-    static String judul, penerbit, penulis;
+    public static ArrayList<Object> tambahData(int id, String judul, String penulis, int tahunTerbit, String penerbit) {
+        ArrayList<Object> ebook = new ArrayList<>();
 
-    public static ArrayList<Object> tambahData(int id, String judul, String penerbit, int tahunTerbit, String penulis) {
+        ebook.add(id);
+        ebook.add(judul);
+        ebook.add(penulis);
+        ebook.add(tahunTerbit);
+        ebook.add(penerbit);
 
-        dataBuku.add(id);
-        dataBuku.add(judul);
-        dataBuku.add(penerbit);
-        dataBuku.add(tahunTerbit);
-        dataBuku.add(penulis);
+        dataEbook.add(ebook);
 
-        return dataBuku;
-
+        return ebook;
     }
 
-    public static ArrayList<String> cariData(String judul, String penulis) {
-        ArrayList<String> hasil = new ArrayList<>();
-        for (int i = 0; i < dataBuku.size(); i += 5) {
-            String cariJudul = (String) dataBuku.get(i + 1);
-            String cariPenulis = (String) dataBuku.get(i + 4);
+    public static void cariData(String judul, String penulis) {
+        for (ArrayList<Object> ebook : dataEbook) {
+            String judulEbook = (String) ebook.get(1);
+            String penulisEbook = (String) ebook.get(2);
 
-            if (judul.equalsIgnoreCase(cariJudul) &&
-                    penulis.equalsIgnoreCase(cariPenulis)) {
-                hasil.add(dataBuku.get(i).toString());
-                hasil.add(dataBuku.get(i + 1).toString());
-                hasil.add(dataBuku.get(i + 2).toString());
-                hasil.add(dataBuku.get(i + 3).toString());
-                hasil.add(dataBuku.get(i + 4).toString());
+            if (judulEbook.equalsIgnoreCase(judul) && penulisEbook.equalsIgnoreCase(penulis)) {
+                System.out.println("Data ditemukan");
             }
         }
-
-        return hasil;
     }
-
 }
